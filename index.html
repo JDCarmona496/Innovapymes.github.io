@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovapymes SENA 2023</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Calibri, Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Estilos del encabezado */
+    header {
+      background-color: #fff; /* Fondo blanco */
+      color: #000; /* Texto negro */
+      text-align: center; /* Alineación centrada */
+      padding: 10px;
+      display: flex; /* Añadimos flex para alinear el logo y el título */
+      align-items: center; /* Centramos verticalmente */
+      justify-content: center; /* Centramos horizontalmente */
+      border-bottom: 2px solid #39A900; /* Línea verde en la parte inferior */
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px; /* Aumentamos el tamaño de la fuente del título */
+    }
+
+    /* Estilos del menú de navegación */
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 5px;
+      background-color: #39A900;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+    }
+
+    /* Estilos de las secciones */
+    section {
+      display: none;
+      padding: 20px 0;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    /* Estilos para la tabla de Programa */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #39A900;
+      color: #fff;
+    }
+
+    /* Estilos del pie de página */
+    footer {
+      background-color: #39A900;
+      color: #fff;
+      text-align: center;
+      padding: 5px;
+    }
+
+   /* Estilos del contenedor de ponentes y comités */
+   .speakers-container, .committees-container {
+      display: flex;
+      flex-wrap: wrap; /* Cambiamos flex-wrap a wrap para que los comités se muestren en línea */
+      justify-content: space-between;
+    }
+
+    /* Estilos de cada ponente y comité */
+    .speaker, .committee {
+      width: 45%; /* Reducimos el ancho de los elementos para dejar espacio entre ellos */
+      margin: 1%; /* Agregamos un pequeño margen entre los elementos */
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .speaker img, .committee img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 70%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .speaker h3, .committee h3 {
+      margin-top: 10px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .speaker p, .committee p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Estilos para la sección "¿Qué es Innovapymes SENA 2023?" */
+    #about {
+      display: block;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0;
+    }
+
+    .zoomable-image {
+      transition: transform 0.3s ease;
+      max-width: 45%;
+      border-radius: 30px;
+    }
+
+    .zoomable-image:hover {
+      transform: scale(1.1);
+    }
+
+    .vision-mission {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 0;
+    }
+
+    .vision-mission img {
+      width: 60%; /* Aumentamos el tamaño de las imágenes */
+      border-radius: 30px;
+    }
+
+    /* Estilos del logo del SENA */
+    .logo-sena {
+      width: 100px;
+      display: block;
+    }
+   
+  </style>
+  <!-- Estilos para los vídeos de YouTube -->
+<style>
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .video-container iframe {
+    width: 280px; /* Ajustamos el ancho de los vídeos */
+    height: 157.5px; /* Ajustamos la altura para mantener la relación de aspecto 16:9 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <img src="Imagenes_innova/logo_sena.png" alt="Logo del SENA" class="logo-sena">
+    <h1>Innovapymes SENA 2023</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('about')">¿Qué es Innovapymes SENA 2023?</a>
+    <a href="#" onclick="showSection('speakers')">Conócenos (Ponentes y Comités)</a>
+    <a href="#" onclick="showSection('contact')">Contacto</a>
+    <a href="#" onclick="showSection('schedule')">Programa</a>
+  </nav>
+  <main>
+    <!-- Sección "¿Qué es Innovapymes SENA 2023?" -->
+    <section class="active" id="about">
+
+       <!-- Vídeos de YouTube -->
+    <div class="video-container">
+      <iframe width="280" height="157.5" src="https://www.youtube.com/watch?v=krDWc30PAGg&ab_channel=H%E1%BB%93ngH%E1%BA%A3i" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="280" height="157.5" src="https://www.youtube.com/embed/4yPZs81lK3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="280" height="157.5" src="https://www.youtube.com/embed/H8tLS_NOWLs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+      <div class="container">
+        <h2>¿Qué es Innovapymes SENA 2023?</h2>
+        <p>
+          Innovapymes SENA 2023 es un evento único y disruptivo organizado por el Servicio Nacional de Aprendizaje (SENA) con el objetivo de capacitar a los participantes de las empresas vinculadas al SENA en temas cruciales para el crecimiento y la innovación empresarial. Este evento brinda una oportunidad excepcional para su empresa de ser parte activa de esta experiencia de aprendizaje y desarrollo.
+        </p>
+        <p>
+          Durante el evento, los participantes tendrán la oportunidad de acceder a valiosos conocimientos y herramientas relacionados con Marketing Digital, Innovación Empresarial y Mejora de la Rentabilidad, impartidos por destacados ponentes nacionales e internacionales en cada uno de estos ejes temáticos.
+        </p>
+
+        <div class="image-container">
+          <img src="Imagenes_innova/flyer_1.png" alt="Imagen 1" class="zoomable-image">
+          <img src="Imagenes_innova/flyer_2.png" alt="Imagen 2" class="zoomable-image">
+        </div>
+
+        <h2 style="text-align: left; width: 2000px;">Misión y Visión</h2> 
+        <p>
+          En un mundo empresarial en constante evolución, reconocemos la importancia de mantenernos a la vanguardia en temas cruciales como el Marketing Digital, la Innovación Empresarial y la Mejora de la Rentabilidad. Por esta razón, hemos reunido a destacados ponentes nacionales e internacionales, quienes compartirán sus conocimientos y experiencias para ayudarte a enfrentar los desafíos actuales y futuros.
+        </p>
+        <p>
+          Te invitamos a ser parte activa de esta experiencia de aprendizaje y desarrollo. Juntos, forjaremos un camino hacia la excelencia empresarial y contribuiremos al desarrollo económico y social de nuestro país.
+        </p>
+        <p>
+          Sin más preámbulos, te presentamos nuestra Misión y Visión, pilares fundamentales que guían nuestra labor y compromiso con el crecimiento sostenible de las empresas y la sociedad en general.
+        </p>
+
+        <div class="vision-mission">
+          <img src="Imagenes_innova/mision.png" alt="Misión" class="zoomable-image">
+          <img src="Imagenes_innova/vision.png" alt="Visión" class="zoomable-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección "Conócenos - Ponentes y Comités" -->
+    <section id="speakers">
+      <div class="container">
+        <h2>Conócenos - Ponentes</h2>
+        <div class="speakers-container">
+          <div class="speaker">
+            <img src="Imagenes_innova/ponente_1.PNG" alt="Ponente 1" class="zoomable-image">
+            <h3>Juan Fernando Correa</h3>
+            <p>
+              Profesional en Negocios Internacionales con amplia experiencia docente y en el campo profesional, presentará una ponencia 
+              inspiradora sobre Innovación Empresarial. Con una Maestría en Administración y otra en Finanzas en proceso, y candidato a Doctorado 
+              en Administración Gerencial, cuenta con una sólida formación académica. Su experiencia como Vicerrector de Investigación y Extensión
+              Académica en el ITM y su participación en proyectos de investigación respaldan su conocimiento en el tema. Como ponente, compartirá 
+              estrategias y enfoques para fomentar la innovación y el crecimiento empresarial.
+            </p>
+          </div>
+          <div class="speaker">
+            <img src="Imagenes_innova/ponente_2.png" alt="Ponente 2" class="zoomable-image">
+            <h3>Wilman Cuellar</h3>
+            <p>
+              Conferencista y coach especializado en ventas, PNL, coaching y marketing digital, presentará una ponencia inspiradora sobre estrategias 
+              efectivas de Marketing Digital. Con amplia formación en liderazgo, inteligencia emocional y Social Media, compartirá su conocimiento y experiencia en la creación 
+              de modelos de estrategias innovadoras para potenciar el éxito en el entorno digital. Su enfoque motivador y su experiencia como autor de libros de éxito lo convierten 
+              en un experto ponente capaz de guiar a los asistentes hacia un crecimiento personal y profesional significativo en el mundo del Marketing Digital.
+            </p>
+          </div>
+          
+          <div class="speaker">
+            <img src="Imagenes_innova/ponente_3.jpg" alt="Ponente 3" class="zoomable-image">
+            <h3>Fabio Aldemar Obando</h3>
+            <p>
+              Dará la ponencia de Rentabilidad Empresarial.
+            </p>
+          </div>
+        
+          <!-- Agrega más ponentes aquí -->
+        </div>
+
+        <h2>Equipo de Trabajo - Comités</h2>
+        <div class="committees-container">
+          <div class="committee" >
+
+            <h3>Comité de Comunicaciones</h3>
+            <p>
+              El Comité de Comunicaciones se encarga de gestionar la difusión de información relevante sobre el evento tanto interna como externamente. Su objetivo es mantener informados a todos los involucrados y al público en general sobre las actividades y logros de Innovapymes SENA 2023.
+            </p>
+            <p>Líder del Comité: Nombre del líder</p>
+            <img src="./Imagenes_innova/comite.jpg" alt="Comité de Comunicaciones" class="zoomable-image">
+
+          </div>
+
+
+          <div class="committee">
+          
+            <h3>Comité de Mercadeo</h3>
+            <p>
+              El Comité de Mercadeo se enfoca en la promoción del evento y en atraer a más participantes y patrocinadores. Sus estrategias buscan asegurar una mayor visibilidad de Innovapymes SENA 2023 y maximizar el impacto del evento en la comunidad empresarial.
+            </p>
+            <p>Líder del Comité: Nombre del líder</p>
+            <img src="./Imagenes_innova/comite.jpg" alt="Comité de Mercadeo" class="zoomable-image">
+
+          </div>
+
+          <div class="committee">
+           
+            <h3>Comité Documental</h3>
+            <p>
+              El Comité Documental se encarga de registrar y archivar cada etapa y detalle del evento. Su labor es fundamental para asegurar un registro completo y ordenado de las actividades de Innovapymes SENA 2023, lo que facilitará futuros análisis y mejoras.
+            </p>
+            <p>Líder del Comité: Nombre del líder</p>
+
+            <img src="./Imagenes_innova/comite.jpg" alt="Comité Documental" class="zoomable-image">
+
+          </div>
+
+          <div class="committee">
+          
+            <h3>Comité Organizacional</h3>
+            <p>
+              El Comité Organizacional es el encargado de planificar y coordinar todos los aspectos logísticos del evento. Desde la selección del lugar hasta la programación, el Comité Organizacional asegura que cada detalle esté cuidado para que Innovapymes SENA 2023 sea un éxito.
+            </p>
+            <p>Líder del Comité: Nombre del líder</p>
+
+            <img src="./Imagenes_innova/comite.jpg" alt="Comité Organizacional" class="zoomable-image">
+
+          </div>
+          
+
+          <div class="committee">
+          
+            <h3>Comité de Logística</h3>
+            <p>
+              El Comité de Logística se encarga de garantizar que los recursos y materiales necesarios para el desarrollo del evento estén disponibles y en óptimas condiciones. Su labor incluye la gestión de equipos, transporte y otros elementos clave para el funcionamiento de Innovapymes SENA 2023.
+            </p>
+            <p>Líder del Comité: Nombre del líder</p>
+
+            <img src="./Imagenes_innova/comite.jpg" alt="Comité de Logística" class="zoomable-image">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección "Contacto" -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p>
+          Si deseas obtener más información sobre Innovapymes SENA 2023, participar como patrocinador o realizar alguna
+          consulta, no dudes en contactarnos. Estamos disponibles para responder tus preguntas y brindarte toda la
+          asesoría que necesites.
+        </p>
+        <p>
+          Puedes comunicarte con nosotros a través del siguiente correo electrónico: info@innovapymes.com o mediante
+          nuestro número de teléfono: +123456789.
+        </p>
+        <p>
+          ¡Esperamos contar contigo en Innovapymes SENA 2023!
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección "Programa" -->
+    <section id="schedule">
+      <div class="container">
+        <h2>Programa</h2>
+        <p>
+          A continuación, te presentamos el programa preliminar de Innovapymes SENA 2023. Ten en cuenta que este programa
+          puede estar sujeto a cambios y actualizaciones. Te invitamos a mantenerte informado a través de nuestras redes
+          sociales para recibir las últimas novedades del evento.
+        </p>
+        <table>
+          <tr>
+            <th>Día</th>
+            <th>Hora</th>
+            <th>Actividad</th>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>9:00 - 10:30</td>
+            <td>Sesión de Apertura</td>
+          </tr>
+          <tr>
+            <td>Lunes</td>
+            <td>11:00 - 13:00</td>
+            <td>Eje Temático 1: Marketing Digital</td>
+          </tr>
+          <tr>
+            <td>Martes</td>
+            <td>9:00 - 10:30</td>
+            <td>Eje Temático 2: Innovación Empresarial</td>
+          </tr>
+          <tr>
+            <td>Martes</td>
+            <td>11:00 - 13:00</td>
+            <td>Eje Temático 3: Mejora de la Rentabilidad</td>
+          </tr>
+          <tr>
+            <td>Miércoles</td>
+            <td>9:00 - 10:30</td>
+            <td>Talleres Prácticos</td>
+          </tr>
+          <tr>
+            <td>Miércoles</td>
+            <td>11:00 - 12:30</td>
+            <td>Clausura y Entrega de Certificados</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Derechos de autor © 2023 Innovapymes SENA. Todos los derechos reservados.</p>
+    <img src="Imagenes_innova/logo_sena.png" alt="Logo del SENA" style="max-width: 130px; margin-top: 25px;">
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      // Oculta todas las secciones
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.style.display = 'none');
+
+      // Muestra la sección seleccionada
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
